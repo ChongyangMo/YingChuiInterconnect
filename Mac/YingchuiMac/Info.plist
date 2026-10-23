@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>zh-Hans</string>
+	</array>
+	<key>CFBundleDisplayName</key>
+	<string>鹰锤互联</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>鹰锤互联</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_yingchui._tcp</string>
+	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>用于发现附近设备，并通过局域网或无线直连传输画面、声音和控制指令。</string>
+	<key>NSScreenCaptureUsageDescription</key>
+	<string>用于将用户选择的电脑屏幕或窗口低延迟传输到已配对设备。</string>
+	<key>SUFeedURL</key>
+	<string>https://chongyang.asia/updates/yingchui/mac/arm64/15.0.0/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>Sr9FgKNcKqu40hbLXF2Rje/uCDjVn5ks81hsRX13PKY=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUAllowsAutomaticUpdates</key>
+	<false/>
+	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUScheduledCheckInterval</key>
+	<integer>3600</integer>
+	<key>SUEnableJavaScript</key>
+	<false/>
+	<key>SUShowReleaseNotes</key>
+	<false/>
+</dict>
+</plist>

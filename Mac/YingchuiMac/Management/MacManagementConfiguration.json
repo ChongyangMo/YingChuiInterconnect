@@ -1,0 +1,7 @@
+{
+  "baseURL": "https://chongyang.asia",
+  "contractVersion": "mac-management-v1",
+  "channel": "unified",
+  "automatic_updates": true,
+  "useSystemProxy": false
+}

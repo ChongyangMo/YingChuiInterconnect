@@ -1,0 +1,8 @@
+{
+  "architecture": "arm64",
+  "signing_identity": "",
+  "upload": {
+    "base_url": "https://deploy.chongyang.asia",
+    "timeout_seconds": 180
+  }
+}

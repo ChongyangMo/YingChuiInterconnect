@@ -1,0 +1,77 @@
+<Window x:Class="YingchuiWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="鹰锤互联 Windows 客户端" Width="1100" Height="780" MinWidth="900" MinHeight="650">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="鹰锤互联" FontSize="30" FontWeight="Bold" />
+            <TextBlock Text="Windows 客户端 · 协议 v3" Foreground="Gray" Margin="0,2,0,18" />
+            <DockPanel Margin="0,0,0,8">
+                <TextBlock Text="局域网内的 Mac" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <Button Content="刷新" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="Refresh_Click" />
+            </DockPanel>
+            <ListBox x:Name="HostsList" Height="180" DisplayMemberPath="DisplayName" SelectionChanged="HostsList_SelectionChanged" />
+
+            <TextBlock Text="主机或 IP" Margin="0,14,0,4" />
+            <TextBox x:Name="HostBox" Text="127.0.0.1" />
+            <TextBlock Text="端口" Margin="0,8,0,4" />
+            <TextBox x:Name="PortBox" />
+            <TextBlock Text="设备名称（用于证书固定）" Margin="0,8,0,4" />
+            <TextBox x:Name="ServiceNameBox" Text="Yingchui Mac" />
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                <Button Content="连接" Width="95" Click="Connect_Click" />
+                <Button Content="断开" Width="95" Margin="8,0,0,0" Click="Disconnect_Click" />
+            </StackPanel>
+
+            <Separator Margin="0,18" />
+            <TextBlock Text="首次配对码" FontWeight="SemiBold" />
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                <TextBox x:Name="PairCodeBox" Width="150" MaxLength="6" FontSize="22" />
+                <Button Content="配对" Width="90" Margin="8,0,0,0" Click="Pair_Click" />
+            </StackPanel>
+            <TextBlock x:Name="ConnectionStatus" Text="正在发现 Mac…" TextWrapping="Wrap" Foreground="Gray" Margin="0,14,0,0" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <DockPanel Margin="0,0,0,10">
+                    <TextBlock Text="Mac 屏幕回传" FontSize="20" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right">
+                        <Button Content="开始回传" Click="StartStream_Click" />
+                        <Button Content="停止" Margin="8,0,0,0" Click="StopStream_Click" />
+                        <Button Content="关键帧" Margin="8,0,0,0" Click="KeyFrame_Click" />
+                    </StackPanel>
+                </DockPanel>
+                <Border Height="360" Background="#111111" CornerRadius="12">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="H.264 UDP 视频接收" Foreground="White" FontSize="24" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="VideoStatus" Text="尚未开始" Foreground="#AAAAAA" Margin="0,8,0,0" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+                <TextBlock x:Name="VideoStats" Text="数据包 0 · 完整帧 0 · 丢帧 0" Foreground="Gray" Margin="0,8,0,18" />
+
+                <TextBlock Text="远程触控板" FontSize="20" FontWeight="SemiBold" />
+                <Border x:Name="Trackpad" Height="220" Background="#E8E8E8" CornerRadius="12" Margin="0,10,0,10"
+                        MouseMove="Trackpad_MouseMove" MouseLeftButtonDown="Trackpad_MouseLeftButtonDown" MouseLeftButtonUp="Trackpad_MouseLeftButtonUp">
+                    <TextBlock Text="按住并拖动以移动 Mac 鼠标" Foreground="#666666" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="左键" Width="100" Click="LeftClick_Click" />
+                    <Button Content="右键" Width="100" Margin="8,0,0,0" Click="RightClick_Click" />
+                    <Button Content="向上滚动" Margin="30,0,0,0" Click="ScrollUp_Click" />
+                    <Button Content="向下滚动" Margin="8,0,0,0" Click="ScrollDown_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                    <TextBox x:Name="TextInputBox" MinWidth="420" />
+                    <Button Content="发送文字" Margin="8,0,0,0" Click="SendText_Click" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

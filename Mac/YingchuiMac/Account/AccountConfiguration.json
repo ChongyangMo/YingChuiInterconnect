@@ -1,0 +1,7 @@
+{
+  "baseURL": "https://chongyang.asia",
+  "clientID": "com.yingchui.interconnect.mac",
+  "contractVersion": "auth-v1.0.0",
+  "appleEnabled": false,
+  "useSystemProxy": false
+}
